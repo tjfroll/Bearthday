@@ -50,7 +50,7 @@ const getClosestImagesForDate = async (targetDate: DateTime): Promise<{
   }
 }
 
-export const PhotoFinder = ({ targetDate }: Props) => {
+export const PhotoSearcher = ({ targetDate }: Props) => {
   const [loading, setLoading] = useState(true) 
   const [imageData, setImageData] = useState<ImageData[]>([])
   const [foundDate, setFoundDate] = useState<DateTime>()
@@ -94,4 +94,4 @@ export const PhotoFinder = ({ targetDate }: Props) => {
   )
 }
 
-export default PhotoFinder
+export default PhotoSearcher

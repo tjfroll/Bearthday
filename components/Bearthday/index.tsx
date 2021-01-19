@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { DateTime } from 'luxon'
-import PhotoFinder from './PhotoFinder'
+import PhotoSearcher from './PhotoSearcher'
 
 // Return the most recent birthday given a birth date arbitrarily in the past
 export const getLastBirthday = (birthDate: DateTime): DateTime => {
@@ -20,9 +20,7 @@ const BearthdayPhotoFinder = () => {
   const [inputDate, setInputDate] = useState<DateTime>()
   const [birthday, setBirthday] = useState<DateTime>()
 
-  const submit = () => {
-    setBirthday(getLastBirthday(inputDate))
-  }
+  const submit = () => setBirthday(getLastBirthday(inputDate))
 
   return (
     <>
@@ -41,14 +39,16 @@ const BearthdayPhotoFinder = () => {
         <button
           disabled={!inputDate?.isValid}
           onClick={submit}
+          type="button"
         >
           Submit
         </button>
       </nav>
       <main>
-        {birthday?.isValid && <PhotoFinder targetDate={birthday} />}
+        {birthday?.isValid && <PhotoSearcher targetDate={birthday} />}
       </main>
     </>
   )
 }
+
 export default BearthdayPhotoFinder

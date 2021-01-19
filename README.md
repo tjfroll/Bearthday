@@ -1,5 +1,3 @@
-## Welcome to the Bearthday Photo Finder!
-
 ### Installation
 ```
 npm install
